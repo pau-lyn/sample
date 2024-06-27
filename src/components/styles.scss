@@ -1,0 +1,294 @@
+a{
+  margin: 0 .5em;
+
+  svg{
+      height: 32px;
+  }
+} 
+.social-icons{
+  margin-top: 10px;
+}
+.social-icons a{
+  transition: transform 0.5s;
+  margin: .5em 1em;
+}
+.social-icons a:hover{
+  svg{
+      fill: #76ABAE;
+  }
+  transform: translateY(-5px);
+}
+
+
+.home{
+        position: relative;
+        overflow: hidden;
+    
+      .glitter {
+        position: absolute;
+        top: -10px;
+        width: 1px;
+        height: .5em;
+        background: #EEEEEE;
+        border-radius: 0;
+        opacity: 0;
+        animation: fall 10s linear infinite, shimmer 2s infinite;
+      }
+      
+      @keyframes fall {
+        0% {
+          top: -10px;
+          left: calc(100vw * var(--glitter-left));
+          opacity: .1;
+        }
+        100% {
+          top: 110%;
+          left: calc(100vw * var(--glitter-left));
+          opacity: 0;
+        }
+      }
+      
+      @keyframes shimmer {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 0.1;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: .4;
+        }
+      }
+
+      .glitter {
+        --glitter-left: calc(1 / 50 * var(--glitter-index));
+        animation-delay: calc(0.2s * var(--glitter-index));
+      }
+
+      .glitter:nth-child(4n) {
+        width: 4px;
+        height: 1.5em;
+        animation-duration: 4s;
+        background-color: #EEEEEE;
+      }
+      
+      .glitter:nth-child(3n) {
+        width: 5px;
+        height: 1em;
+        animation-duration: 8s;
+        background-color: #22283127;
+      }
+      .glitter:nth-child(5n) {
+        width: .2px;
+        height: 1.5em;
+        animation-duration: 2s;
+        background-color: #EEEEEE;
+      }
+      .glitter:nth-child(6n) {
+        width: 4px;
+        height: 1em;
+        animation-duration: 2s;
+        background-color: #76abae61;
+      }
+
+    .d-flex{
+        z-index: 1;
+    }
+    h1{
+        font-size: 48px;
+        margin-bottom: .5em;
+    }
+    h4{
+        font-size: 32px;
+        margin-bottom: .5em;
+        font-weight: 700;
+    }
+    h3{
+        font-size: 20px;
+    }
+    
+}
+.about, .contact, .portfolio, .home {
+    h1, h3{
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+}
+
+.about{
+    p{
+        margin: 2em 10em;
+
+    }
+    div h3{
+        font-size: 24px;
+        color: #76ABAE;
+        margin: 2em 0;
+    }
+    .row{
+        margin: 0 10em;
+    }
+    svg{
+        height: 50px;
+        fill: #222831;
+        margin: 2em 0;
+    }
+
+    .tech-icon {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      
+        .tooltip-text {
+          visibility: hidden;
+          width: auto;
+          background-color: #555;
+          color: #EEEEEE;
+          text-align: center;
+          border-radius: 5px;
+          padding: 5px 10px;
+          position: absolute;
+          z-index: 1;
+          bottom: 85%; /* Position above the icon */
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          transition: opacity 0.3s;
+      
+          &::after {
+            content: "";
+            position: absolute;
+            top: 100%; /* Arrow pointing down */
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+          }
+        }
+      
+        &:hover .tooltip-text {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      
+}
+.contact{
+
+  .row{
+    margin: 5em 8em;
+  }
+  
+  .email-btn{  
+    background: linear-gradient(0deg, #222831, #555b63);
+    border: none;
+    border-radius: 5em;
+    padding: 1em;
+    margin: 1em auto;
+    a{
+      font-size: 20px;
+      text-decoration: none;
+      color: #EEEEEE;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    svg{
+      margin-right: .5em;
+      height: 24px;
+      fill: #EEEEEE;
+    }
+  }
+  .email-btn:hover{
+    background: linear-gradient(0deg, #76ABAE, #A3CFD9);
+    a{
+      color: #222831;
+    }
+    svg{
+      margin-right: .5em;
+      height: 24px;
+      fill: #222831;
+    }
+  }
+  p{
+    font-size: 20px;
+    font-weight: 700;
+    .social-icons{
+      margin-top: 0;
+    }
+    .social-icons a{
+      margin: 0 1em;
+    }
+  }
+ .line-text {
+    position: relative;
+    text-align: center;
+    color: #76ABAE;
+  }
+
+  .line-text::before,
+  .line-text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: #76ABAE;
+  }
+
+  .line-text::before {
+    left: -50px;
+  }
+
+  .line-text::after {
+    right: -50px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+    
+    .home{
+        h1{
+            font-size: 42px;
+        }
+        h4{
+            font-size: 28px;
+            margin-bottom: .5em;
+            font-weight: 700;
+        }
+        h3{
+            font-size: 16px;
+        }
+    }
+    .about{
+        p {
+            margin: 2em 0;
+            font-size: 14px;
+        }
+        div h3{
+            font-size: 18px;
+
+        }
+        .row{
+            margin: 0;
+        }
+        svg{
+            height: 32px;
+            margin: 1em 0;
+        }
+    }
+    .contact{
+      .row{
+        margin: 2em 0;
+      }
+      .email-btn{  
+        border-radius: 5em;
+        padding: .5em;
+        a{
+          font-size: 16px;
+        }
+        svg{
+          height: 20px;
+        }
+      }
+    }
+}
